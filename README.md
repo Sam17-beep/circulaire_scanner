@@ -1,6 +1,6 @@
 # Circulaire Scanner
 
-Est un projet personel fait en une soirée pour me permettre d'économisé en appartement !
+Est un projet personel fait en une soirée pour me permettre d'économiser en appartement !
 
 ## Des idées pour d'autre features
 
