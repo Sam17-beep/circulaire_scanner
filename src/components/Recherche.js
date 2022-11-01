@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 
 const Recherche = (props) => {
-  const [currentSelected, setCurrentSelected] = useState('tout');
+  const [currentSelected, setCurrentSelected] = useState('metro');
   const [item, setItem] = useState('');
 
   const itemInputChangeHandler = (e) => {
@@ -30,8 +30,12 @@ const Recherche = (props) => {
 
   async function getMoviesFromApi(magasin) {
     let lien =
-      'https://backflipp.wishabi.com/flipp/items/search?locale=fr-ca&postal_code=G2E6A4&q=' +
-      magasin;
+      'https://backflipp.wishabi.com/flipp/items/search?locale=fr-ca&postal_code=G2E6A4&q=';
+    if (magasin === 'tout') {
+      lien += item;
+    } else {
+      lien += magasin;
+    }
 
     try {
       let response = await fetch(lien);
@@ -65,11 +69,12 @@ const Recherche = (props) => {
           value={currentSelected}
           onChange={selectedChangeHandler}
         >
-          <option value='tout'>Tout</option>
           <option value='metro'>Metro</option>
           <option value='iga'>IGA</option>
           <option value='super%20C'>Super C</option>
           <option value='provigo'>Provigo</option>
+          <option value='maxi'>Maxi</option>
+          <option value='tout'>Tout</option>
         </select>
       </label>
     </div>

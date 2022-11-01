@@ -17,7 +17,9 @@ const Article = (props) => {
     <div className='card'>
       <div className='info'>
         <div>{item.magasin}</div>
-        <div>{item.mot}</div>
+        <a className='petitChar' href={item.image} target='_blank'>
+          {item.mot}
+        </a>
       </div>
       <div className='titre'>{item.item.toLowerCase()}</div>
       <div className='prix'>{prix}</div>
