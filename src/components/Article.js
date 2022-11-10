@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Article.css';
 
 const Article = (props) => {
+  const [sel, setSel] = useState(false);
+
   const item = props.article;
   let prix = '';
   let postText = '';
@@ -13,8 +15,18 @@ const Article = (props) => {
     postText += item.postText;
   }
 
+  const articleClickHandler = () => {
+    props.onArticleSelectionne(props.cle);
+    setSel((prevSel) => {
+      return !prevSel;
+    });
+  };
+
   return (
-    <div className='card'>
+    <div
+      className={'card ' + (sel ? 'sel' : 'not-sel')}
+      onClick={articleClickHandler}
+    >
       <div className='info'>
         <div>{item.magasin}</div>
         <a className='petitChar' href={item.image} target='_blank'>

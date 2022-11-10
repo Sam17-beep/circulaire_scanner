@@ -7,4 +7,13 @@ label {
 
 .App {
   margin: 10px;
+  display: flex;
+}
+
+.main-part {
+  flex-basis: 66%;
+}
+.list-epiceri {
+  flex-basis: 34%;
+  border: 1px solid red;
 }

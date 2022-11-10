@@ -3,9 +3,11 @@ import { useState } from 'react';
 
 import Recherche from './components/Recherche';
 import Affichage from './components/Affichage';
+import List from './components/listEpicerie/List';
 
 function App() {
   const [itemList, setItemList] = useState([]);
+  const [itemSelect, setItemSelect] = useState([]);
 
   const newItemHandler = (items, mot) => {
     if (items.length > 0) {
@@ -25,11 +27,35 @@ function App() {
     }
   };
 
+  const newItemSelectionneHandler = (itemSel) => {
+    // setItemSelect((prevItemSelect) => {
+    //   console.log(prevItemSelect.includes(itemSel));
+    //   if (prevItemSelect.includes(itemSel)) {
+    //     console.log('1');
+    //     return prevItemSelect.filter((item) => item !== itemSel);
+    //   }
+    //   prevItemSelect.push(itemSel);
+    //   console.log('2');
+    //   return prevItemSelect;
+    // });
+
+    if (itemSelect.includes(itemSel)) {
+      setItemSelect(itemSelect.filter((item) => item !== itemSel));
+    } else {
+      setItemSelect([...itemSelect, itemSel]);
+    }
+  };
+
   return (
     <div className='App'>
-      <Recherche onNewItemFound={newItemHandler} />
-      <br></br>
-      <Affichage list={itemList} />
+      <div className='main-part'>
+        <Recherche onNewItemFound={newItemHandler} />
+        <br></br>
+        <Affichage list={itemList} onSelArticle={newItemSelectionneHandler} />
+      </div>
+      <div className='list-epiceri'>
+        <List itemsSel={itemSelect} />
+      </div>
     </div>
   );
 }
