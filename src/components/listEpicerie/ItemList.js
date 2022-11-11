@@ -1,7 +1,8 @@
 import React from 'react';
+import './ItemList.css';
 
 const ItemList = (props) => {
-  return <div>{props.item.item}</div>;
+  return <li>{props.item.item.toLowerCase()}</li>;
 };
 
 export default ItemList;

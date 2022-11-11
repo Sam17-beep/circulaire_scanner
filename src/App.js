@@ -46,14 +46,25 @@ function App() {
     }
   };
 
+  const effacerListHandler = () => {
+    setItemList([]);
+  };
+  const effacerHandler = () => {
+    setItemSelect([]);
+  };
+
   return (
     <div className='App'>
       <div className='main-part'>
         <Recherche onNewItemFound={newItemHandler} />
+        <div>
+          <button onClick={effacerListHandler}>Clear</button>
+        </div>
         <br></br>
         <Affichage list={itemList} onSelArticle={newItemSelectionneHandler} />
       </div>
       <div className='list-epiceri'>
+        <button onClick={effacerHandler}>Clear</button>
         <List itemsSel={itemSelect} />
       </div>
     </div>

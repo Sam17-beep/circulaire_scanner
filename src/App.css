@@ -15,5 +15,5 @@ label {
 }
 .list-epiceri {
   flex-basis: 34%;
-  border: 1px solid red;
+  border-left: 2px white solid;
 }
