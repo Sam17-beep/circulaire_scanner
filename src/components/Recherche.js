@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import './Recherche.css';
 
 const Recherche = (props) => {
   const [currentSelected, setCurrentSelected] = useState('metro');
@@ -47,25 +48,21 @@ const Recherche = (props) => {
   }
 
   return (
-    <div>
-      <form onSubmit={formSubmitedHandler}>
-        <label>
-          Item:
-          <input
-            type='text'
-            name='item'
-            className='m'
-            value={item}
-            onChange={itemInputChangeHandler}
-          />
-        </label>
-        <input type='submit' value='Rechercher' />
+    <div className='container'>
+      <form onSubmit={formSubmitedHandler} className='space-under'>
+        <label className='space-right'>Article :</label>
+        <input
+          type='text'
+          name='item'
+          value={item}
+          onChange={itemInputChangeHandler}
+        />
+        <input type='submit' value={'🔍'} />
       </form>
-      <label>
-        Magasin:
+      <div>
+        <label className='space-right'>Magasin:</label>
         <select
           name='form1'
-          className='m'
           value={currentSelected}
           onChange={selectedChangeHandler}
         >
@@ -76,7 +73,7 @@ const Recherche = (props) => {
           <option value='maxi'>Maxi</option>
           <option value='tout'>Tout</option>
         </select>
-      </label>
+      </div>
     </div>
   );
 };

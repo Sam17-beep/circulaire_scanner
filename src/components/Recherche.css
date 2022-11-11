@@ -1,0 +1,43 @@
+:root {
+  --main-height: 2rem;
+}
+
+.container {
+  /* border: 1px solid red; */
+  padding: 10px;
+  background-color: darkcyan;
+  border-radius: 5px;
+  margin: 0px 10px 10px 0px;
+
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2rem;
+}
+
+.space-under {
+  margin-bottom: 5px;
+}
+
+input[type='text'] {
+  height: 32px;
+  border: none;
+  padding: 0px 0px;
+  font-size: 15px;
+}
+
+input[type='submit'] {
+  height: 32px;
+  width: 32px;
+}
+
+select {
+  height: 32px;
+  font-size: 15px;
+}
+
+.space-right {
+  margin-right: 5px;
+}

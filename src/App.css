@@ -1,9 +1,6 @@
 label {
   color: white;
 }
-.m {
-  margin: 0px 6px 0px 6px;
-}
 
 .App {
   margin: 10px;
@@ -13,6 +10,7 @@ label {
 .main-part {
   flex-basis: 66%;
 }
+
 .list-epiceri {
   flex-basis: 34%;
   border-left: 2px white solid;
